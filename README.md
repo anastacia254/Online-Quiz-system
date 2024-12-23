@@ -1,4 +1,4 @@
-# Django quiz app
+# Online Quiz system
 This is a configurable quiz app for Django.
 
 # Current features
