@@ -27,8 +27,6 @@ git clone https://github.com/anastacia254/Online-Quiz-system.git
 pip install -r requirements.txt
 
 Add 'quiz', 'multichoice', 'true_false', and 'essay' to your 'INSTALLED_APPS' setting.
-![687474703a2f2f692e696d6775722e636f6d2f554a74525a786f2e706e67](https://github.com/user-attachments/assets/b8af56b3-93ab-4f83-9c31-f2738f119241)
-![687474703a2f2f692e696d6775722e636f6d2f56525978334f562e706e67](https://github.com/user-attachments/assets/b7d1179d-279e-469e-9a90-ce4b12e284f7)
 
 INSTALLED_APPS = (
 ... 'quiz', 'multichoice', 'true_false', ...
@@ -39,4 +37,6 @@ Add the following to your projects 'urls.py' file, substituting 'q' for whatever
 urlpatterns = patterns('',
 ... url(r'^q/', include('quiz.urls')), ...
 )
+![687474703a2f2f692e696d6775722e636f6d2f554a74525a786f2e706e67](https://github.com/user-attachments/assets/b8af56b3-93ab-4f83-9c31-f2738f119241)
+![687474703a2f2f692e696d6775722e636f6d2f56525978334f562e706e67](https://github.com/user-attachments/assets/b7d1179d-279e-469e-9a90-ce4b12e284f7)
 
