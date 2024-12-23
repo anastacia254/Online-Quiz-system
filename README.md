@@ -20,7 +20,7 @@ Requirements
 django-model-utils
 
 Installation
-git clone https://github.com/tomwalker/django_quiz.git
+git clone (https://github.com/anastacia254/Online-Quiz-system.git)
 
 pip install -r requirements.txt
 
