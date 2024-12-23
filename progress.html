@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load quiz_tags %}
+
+{% block title %} {% trans "Progress Page" %} {% endblock %}
+{% block description %} {% trans "User Progress Page" %} {% endblock %}
+
+{% block content %}
+
+  {% if cat_scores %}
+    <h1>{% trans "Question Category Scores" %}</h1>
+
+    <table class="table table-bordered table-striped" aria-label="{% trans 'Category Scores Table' %}">
+      <caption>{% trans "Scores for each question category based on your performance." %}</caption>
+      <thead>
+        <tr>
+          <th>{% trans "Category" %}</th>
+          <th>{% trans "Correctly Answered" %}</th>
+          <th>{% trans "Incorrect" %}</th>
+          <th>{% trans "Percentage" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cat, value in cat_scores.items %}
+          <tr>
+            <td>{{ cat }}</td>
+            <td>{{ value.0 }}</td>
+            <td>{{ value.1 }}</td>
+            <td>{{ value.2 }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+
+  {% if exams %}
+    <hr>
+
+    <h1>{% trans "Previous Exam Papers" %}</h1>
+    <p class="lead">
+      {% trans "Below are the results of exams that you have completed." %}
+    </p>
+
+    <table class="table table-bordered table-striped" aria-label="{% trans 'Previous Exams Table' %}">
+      <caption>{% trans "Details of your scores in previous exam papers." %}</caption>
+      <thead>
+        <tr>
+          <th>{% trans "Quiz Title" %}</th>
+          <th>{% trans "Score" %}</th>
+          <th>{% trans "Possible Score" %}</th>
+          <th>{% trans "Percentage" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for exam in exams %}
+          <tr>
+            <td>{{ exam.quiz.title }}</td>
+            <td>{{ exam.current_score }}</td>
+            <td>{{ exam.get_max_score }}</td>
+            <td>{{ exam.get_percent_correct }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+
+{% endblock %}
